@@ -12,15 +12,30 @@ module.exports = {
       module:{
         rules: [
         {
-           test: /\.js$/,
+           test: /\.(js|jsx)$/, 
            exclude: /node_modules/,
            use: {
-            loader: 'babel-loader'
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env']
+            }
+          }            
+        },
+        {
+            test: /\.css$/,
+            use: [
+              "style-loader",
+              {
+                loader: "css-loader",
+                options: {
+                  modules: true
+                }
+              }
+            ]
           }
-        }
       ]
     },
-    
+
       plugins: [
         new HtmlWebpackPlugin({
         template: './src/index.html'
