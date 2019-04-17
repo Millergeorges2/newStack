@@ -7,7 +7,7 @@ class App extends React.Component {
         return (
             <Router>
                 <div>
-                    <Route path='/' component = { LandingPage } />
+                    <Route exact path='/' component = { LandingPage } />
                     <Route path='/about' component={ About } />
                     </div>
             </Router>

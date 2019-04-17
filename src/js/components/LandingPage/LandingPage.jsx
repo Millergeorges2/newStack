@@ -1,13 +1,17 @@
 import React from 'react'
+import NavBar from '../NavBar/NavBar.jsx'
+
+
+
 
 export default class About extends React.Component {
     constructor(props) {
         super(props);
-
     }
     render() {
         return (
             <div>
+                <NavBar />
                 <div className='jumbotron text-center'>
                     <h1 className="display-3">
                     VidJot
