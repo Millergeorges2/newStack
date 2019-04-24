@@ -1,6 +1,5 @@
 var express = require('express');
 
-const exphbs = require('express-handlebars');
 
 const mongoose = require('mongoose');
 
@@ -26,19 +25,20 @@ app.set('view engine', 'handlebars');
 
 
 app.get('/', (req, res) => {
-    const title = 'welcome';
-    res.render('index', {
-        title: title
-    });
+    res.status(200).send('hello')
 });
 
 app.get('/about', (req, res) => {
-    res.render('about');
+    res.status(200).send('hello')
 });
 
 app.get('/ideas/add', (req, res) => {
-    res.render('ideas/add');
+    res.status(200).send('connected');
 });
+
+app.post('/ideas', (req,res)=>{
+    res.send('ok');
+})
 
 const PORT = 5000;
 
